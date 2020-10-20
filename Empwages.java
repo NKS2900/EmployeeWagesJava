@@ -1,25 +1,34 @@
 package org.emp;
 
 import java.util.Random;
+import java.util.Scanner;
 
-public class EmpCheck {
+public class EmpDailyWages {
+	
+	//Calculate Employee Daily Wages
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		//Check Employee is present or not Using Random()
-		
-		int isFullTime=1;
+		int isFullTime = 1;
+		int perHour = 20;
+		int FullDayHour = 8;
+		Scanner in = new Scanner(System.in);
+		System.out.println("-------Employee_Wages--------");
+
 		Random rn=new Random();
 		int rand=rn.nextInt(2);
-		System.out.println(rand);
-		System.out.println("-------Employee_Wages--------");
-		if(rand==isFullTime) {
-			System.out.println("Employee present");
-		}
+
+		if (rand == isFullTime) {
+
+			System.out.println("Enter no Days Employee Worked : ");
+			int day = in.nextInt();
+			int TotalWages = perHour * (FullDayHour * day);
+			System.out.println("Total_Salary for " + day + " days : " + TotalWages + " Rs.");
+		} 
 		else
-			System.out.println("Empoyee absent.");
+			System.out.println("Employee is absent..!!!");
 		
+		in.close();
 	}
 
 }
