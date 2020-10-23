@@ -28,11 +28,11 @@ public class EmpForDiffComp {
 				switch(empCheck)
 				{
 					case IS_PART_TIME:
-										empHrs=4;
-										break;
+							empHrs=4;
+							break;
 					case IS_FULL_TIME:
-										empHrs=8;
-										break;
+							empHrs=8;
+							break;
 					default:
 							empHrs=0;
 				}
