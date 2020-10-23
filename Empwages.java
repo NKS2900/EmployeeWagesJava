@@ -1,6 +1,6 @@
 package org.test;
 
-public class EmpForDiffComp {
+public class Empwages {
 
 		public static final int IS_PART_TIME =1;
 		public static final int IS_FULL_TIME= 2;
@@ -45,8 +45,8 @@ public class EmpForDiffComp {
 		public static void main(String[] args)
 		{
 		
-			EmpForDiffComp Wipro = new EmpForDiffComp("wipro",20,20,100);
-			EmpForDiffComp Infosys = new EmpForDiffComp("infosys",30,20,100);
+			Empwages Wipro = new Empwages("wipro",20,20,100);
+			Empwages Infosys = new Empwages("infosys",30,20,100);
 			
 			System.out.println("============Emloyee_Wages_in_Wipro==============");
 			System.out.println("Total Employee Wage for "+Wipro.company+": "+Wipro.CalEmpWages());
