@@ -1,39 +1,57 @@
 package org.test;
 
-import java.util.Random;
-import java.util.Scanner;
+public class EmpForDiffComp {
 
-public class Empwages {
-
-	public static final int isFullTime = 1;
-	public static final int isPartTime = 0;
-	public static final int perHour = 20;
-	public static final int FullDayHour = 8;
-	static Scanner in = new Scanner(System.in);
-
-	public static void main(String[] args) {
-		System.out.println("---------Employee_Wages-----------");
+		public static final int IS_PART_TIME =1;
+		public static final int IS_FULL_TIME= 2;
+		private final String company;
+		private final int empRateHours;
+		private final int numofWorkDays;
+		private final int maxHoursperMonth;
 		
-		Empwages emp = new Empwages();
-		emp.CalEmpWages();
-	}
+		public EmpForDiffComp(String company, int empRateHours, int numofWorkDays,int maxHoursperMonth)
+		{
+			this.company=company;
+			this.empRateHours=empRateHours;
+			this.maxHoursperMonth=maxHoursperMonth;
+			this.numofWorkDays=numofWorkDays;
+		}
 
-	public void CalEmpWages() {
-		Random rn = new Random();
-		int rand = rn.nextInt(2);
-		if (rand == isFullTime) {
-			System.out.println("Enter fullTimeDays Employee Worked : ");
-			int day = in.nextInt();
-			int TotalWages = perHour * (FullDayHour * day);
-			System.out.println("Total_Salary for " + day + " days : " + TotalWages + " Rs.");
-		} 
-		else if(rand == isPartTime) {
-			System.out.println("Enter partTimeDays Employee Worked : ");
-			int day = in.nextInt();
-			int TotalWages = perHour * ((FullDayHour/2) * day);
-			System.out.println("Total_Salary for " + day + " days : " + TotalWages + " Rs.");
-		}else
-			System.out.println("Employee is absent..!!!");
-		in.close();
+		private int CalEmpWages()
+		{
+			int empHrs=0,totalEmpHours=0,totalWorkDays=0;
+
+			while(totalEmpHours<=maxHoursperMonth && totalWorkDays< numofWorkDays )
+			{
+				totalWorkDays++;
+				int empCheck=(int)(Math.random()*10%3);
+				switch(empCheck)
+				{
+					case IS_PART_TIME:
+										empHrs=4;
+										break;
+					case IS_FULL_TIME:
+										empHrs=8;
+										break;
+					default:
+							empHrs=0;
+				}
+				totalEmpHours+=empHrs;				
+			}
+			System.out.println("Total Employee work Hours: "+totalEmpHours);
+			return totalEmpHours*empRateHours;
+		}
+
+		public static void main(String[] args)
+		{
+		
+			EmpForDiffComp Wipro = new EmpForDiffComp("wipro",20,20,100);
+			EmpForDiffComp Infosys = new EmpForDiffComp("infosys",30,20,100);
+			
+			System.out.println("============Emloyee_Wages_in_Wipro==============");
+			System.out.println("Total Employee Wage for "+Wipro.company+": "+Wipro.CalEmpWages());
+			System.out.println("============Emloyee_Wages_in_Infosys==============");
+			System.out.println("Total Employee Wage for "+Infosys.company+": "+Infosys.CalEmpWages());
+		}
+		
 	}
-}
