@@ -1,4 +1,4 @@
-package UC_12;
+package UC_13;
 
 public class CompanyEmpWage
 {
@@ -21,6 +21,6 @@ public class CompanyEmpWage
 	}
 	public String toString()
 	{
-		return "Total Emp Wage for Company : " + company+" is : "+totalEmpWage;
+		return "Total EMp Wage for company : " + company+" is : "+totalEmpWage;
 	}
 }
