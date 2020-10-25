@@ -1,4 +1,4 @@
-package UC_12;
+package UC_13;
 
 public class EmpWageComputationeight
 {
@@ -28,11 +28,11 @@ public class EmpWageComputationeight
 			switch(empCheck)
 			{
 				case IS_PART_TIME:
-									empHrs=4;
-									break;
+						empHrs=4;
+						break;
 				case IS_FULL_TIME:
-									empHrs=8;
-									break;
+						empHrs=8;
+						break;
 				default:
 						empHrs=0;
 			}
