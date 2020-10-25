@@ -1,16 +1,17 @@
-package UC_12;
+package UC_13;
 
-public class EmpWageBuilderArrayList
+public class EmpWageBuilder
 {
 	public static final int IS_PART_TIME=1;
 	public static final int IS_FULL_TIME=2;
 	private int numOfCompany=0;
 	private CompanyEmpWage[] companyEmpWageArray;
 
-	public EmpWageBuilderArrayList()
+	public EmpWageBuilder()
 	{
 		companyEmpWageArray = new CompanyEmpWage[5];
 	}
+
 	private void addCompanyEmpWage(String company , int empRatePerHour , int numOfWorkingDays , int maxHoursPerMonth)
 	{
 		companyEmpWageArray[numOfCompany] = new CompanyEmpWage(company,empRatePerHour,numOfWorkingDays,maxHoursPerMonth);
@@ -28,7 +29,6 @@ public class EmpWageBuilderArrayList
 	private int computeEmpWage(CompanyEmpWage companyEmpWage)
 	{
 		int empHrs=0,totalEmpHrs = 0 , totalWorkingDays = 0;
-
 		while(totalEmpHrs <= companyEmpWage.maxHoursPerMonth && totalWorkingDays < companyEmpWage.numOfWorkingDays)
 		{
 			totalWorkingDays++;
@@ -45,13 +45,13 @@ public class EmpWageBuilderArrayList
 					empHrs = 0;
 			}
 			totalEmpHrs += empHrs;
-			System.out.println("Day : " + totalWorkingDays + "EMp Hr : " + empHrs);
+			System.out.println("Day : " + totalWorkingDays + "Emp Hr : " + empHrs);
 		}
 		return totalEmpHrs * companyEmpWage.empRatePerHour;
 	}
 	public static void main(String[] args)
 	{
-		EmpWageBuilderArrayList empWageBuilder = new EmpWageBuilderArrayList();
+		EmpWageBuilder empWageBuilder = new EmpWageBuilder();
 		empWageBuilder.addCompanyEmpWage("Dmart", 20, 2, 10);
 		empWageBuilder.addCompanyEmpWage("Reliance", 10, 4, 20);
 		empWageBuilder.computeEmpWage();
