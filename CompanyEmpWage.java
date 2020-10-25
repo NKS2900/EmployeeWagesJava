@@ -1,8 +1,7 @@
-package UC_11;
+package UC_12;
 
 public class CompanyEmpWage
 {
-
 	public final String company;
 	public final int empRatePerHour;
 	public final int numOfWorkingDays;
@@ -16,13 +15,12 @@ public class CompanyEmpWage
 		this.numOfWorkingDays=numOfWorkingDays;
 		this.maxHoursPerMonth=maxHoursPerMonth;
 	}
-
 	public void setTotalEmpWage(int totalEmpWage)
 	{
 		this.totalEmpWage=totalEmpWage;
 	}
 	public String toString()
 	{
-		return "Total Emp Wage for company : " + company+" is : "+totalEmpWage;
+		return "Total Emp Wage for Company : " + company+" is : "+totalEmpWage;
 	}
 }
