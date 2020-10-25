@@ -1,8 +1,7 @@
-package UC_11;
+package UC_12;
 
-public class EmpWageComputation
+public class EmpWageComputationeight
 {
-
 	public static final int IS_PART_TIME =1;
 	public static final int IS_FULL_TIME= 2;
 	private final String company;
@@ -10,7 +9,7 @@ public class EmpWageComputation
 	private final int numofWorkDays;
 	private final int maxHoursperMonth;
 
-	public EmpWageComputation(String company, int empRateHours, int numofWorkDays,int maxHoursperMonth)
+	public EmpWageComputationeight(String company, int empRateHours, int numofWorkDays,int maxHoursperMonth)
 	{
 		this.company=company;
 		this.empRateHours=empRateHours;
@@ -47,8 +46,8 @@ public class EmpWageComputation
 	public static void main(String[] args)
 	{
 		System.out.println("***WELCOME TO EMPLOYEE WAGE COMPUTATION***");
-		EmpWageComputation dMart = new EmpWageComputation("DMart",20,30,100);
-		EmpWageComputation Relaince = new EmpWageComputation("Reliance",30,30,100);
+		EmpWageComputationeight dMart = new EmpWageComputationeight("DMart",20,30,100);
+		EmpWageComputationeight Relaince = new EmpWageComputationeight("Reliance",30,30,100);
 		System.out.println("Total Employee Wage for "+dMart.company+": "+dMart.calEmpWage());
 		System.out.println("Total Employee Wage for "+Relaince.company+": "+Relaince.calEmpWage());
 	}
