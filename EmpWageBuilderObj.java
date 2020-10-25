@@ -1,4 +1,4 @@
-package UC_13;
+package UC_14;
 
 public class EmpWageBuilderObj
 {
@@ -21,6 +21,7 @@ public class EmpWageBuilderObj
 	public void computeWage()
 	{
 		int empHrs=0 , totalEmpHrs=0 , totalWorkingDays=0;
+
 		while(totalEmpHrs <= maxHrsPerMonth && totalWorkingDays < numOfWorkingDays)
 		{
 			totalWorkingDays++;
@@ -41,6 +42,7 @@ public class EmpWageBuilderObj
 		}
 		totalEmpWage = totalEmpHrs*empRatePerHour;
 	}
+
 	public String toString()
 	{
 		return "Total Emp Wage for Company : " + company + " is : " + totalEmpWage;
