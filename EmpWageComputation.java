@@ -1,6 +1,7 @@
-package UC_10;
+package UC_11;
 
-public class EmpWageComputation {
+public class EmpWageComputation
+{
 
 	public static final int IS_PART_TIME =1;
 	public static final int IS_FULL_TIME= 2;
